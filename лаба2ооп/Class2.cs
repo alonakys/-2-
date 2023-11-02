@@ -35,7 +35,7 @@ namespace лаба2ооп
                 {
                     for (int j = 0; j < matr1.Width; j++)
                     {
-                        array[i, c] += matr1[i, j] + matr2[j, c];
+                        array[i, c] += matr1[i, j] * matr2[j, c];
                     }
                 }
             }
@@ -69,9 +69,5 @@ namespace лаба2ооп
                 }
             }
         }
-        //public double Determinant()
-        //{
-
-        //}
     }
 }

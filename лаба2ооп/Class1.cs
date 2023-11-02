@@ -7,7 +7,6 @@ namespace лаба2ооп
     public partial class MyMatrix
     {
         private double[,] matrix;
-        private double? dererminant;
 
         public MyMatrix(MyMatrix other)
         {
