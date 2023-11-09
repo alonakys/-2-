@@ -80,7 +80,6 @@ namespace лаба2ооп
             set 
             { 
                 matrix[row, col] = value;
-                dererminant = null;
             }
         }
         public double getElem(int row, int col)
@@ -88,7 +87,6 @@ namespace лаба2ооп
         public void setElem(int row, int col, double value)
         { 
             matrix[row, col] = value;
-            dererminant = null;
         }
 
         public override string ToString()
