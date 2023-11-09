@@ -46,12 +46,13 @@ namespace лаба2ооп
             int numRows = data.Length;
             int numCols = data[0].Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
             matrix = new double[numRows, numCols];
-            for (int i = 1; i < numRows; i++)
+
+            for (int i = 0; i < numRows; i++)
             {
                 var rowData = Array.ConvertAll(data[i].Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries), double.Parse);
                 if (rowData.Length != numCols)
                 {
-                    throw new ArgumentException("рiзна кiлькiсть чисел у рядку");
+                    throw new ArgumentException("Рiзна кiлькiсть чисел у рядку");
                 }
                 for (int j = 0; j < numCols; j++)
                 {
@@ -59,7 +60,8 @@ namespace лаба2ооп
                 }
             }
         }
-
+        public MyMatrix(string data) : this (data.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
+        { }
         public int Height //properties
         {
             get { return matrix.GetLength(0); }
