@@ -90,7 +90,7 @@ namespace lab5_1_2
         public static MyTime AddSeconds(MyTime time, int seconds)
         {
             int secondsSinceMidnight = TimeSinceMidnight(time);
-            secondsSinceMidnight = (secondsSinceMidnight + seconds) % (numOfHoursInDay * numOfSecondsInHour);
+            secondsSinceMidnight = (secondsSinceMidnight + numOfHoursInDay * numOfSecondsInHour + seconds) % (numOfHoursInDay * numOfSecondsInHour);
             return TimeSinceMidnight(secondsSinceMidnight);
         }
     }

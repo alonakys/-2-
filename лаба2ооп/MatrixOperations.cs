@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace лаба2ооп
+namespace lab2
 {
     public partial class MyMatrix
     {

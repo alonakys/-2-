@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace лаба2ооп
+namespace lab2
 {
     public partial class MyMatrix
     {
@@ -49,7 +49,7 @@ namespace лаба2ооп
 
             for (int i = 0; i < numRows; i++)
             {
-                var rowData = Array.ConvertAll(data[i].Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries), double.Parse);
+                double[] rowData = Array.ConvertAll(data[i].Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries), double.Parse);
                 if (rowData.Length != numCols)
                 {
                     throw new ArgumentException("Рiзна кiлькiсть чисел у рядку");
@@ -60,7 +60,7 @@ namespace лаба2ооп
                 }
             }
         }
-        public MyMatrix(string data) : this (data.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
+        public MyMatrix(string data) : this(data.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
         { }
         public int Height //properties
         {
@@ -79,37 +79,31 @@ namespace лаба2ооп
         public double this[int row, int col]
         {
             get { return matrix[row, col]; }
-            set 
-            { 
+            set
+            {
                 matrix[row, col] = value;
             }
         }
         public double getElem(int row, int col)
         { return matrix[row, col]; }
         public void setElem(int row, int col, double value)
-        { 
+        {
             matrix[row, col] = value;
         }
 
         public override string ToString()
         {
-            string result = "";
-            for (int i = 0; i < Height; i++)
+            StringBuilder str = new StringBuilder();
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < Width; j++)
+                str = str.Append(matrix[i, 0].ToString());
+                for (int j = 1; j < matrix.GetLength(1); j++)
                 {
-                    result += matrix[i, j].ToString() + " ";
-                    if (j < Width - 1)
-                    {
-                        result += " ";
-                    }
+                    str = str.Append('\t' + matrix[i, j].ToString());
                 }
-                if (i < Height - 1)
-                {
-                    result += Environment.NewLine;
-                }
+                str = str.Append('\n');
             }
-            return result;
+            return str.ToString();
         }
     }
 }

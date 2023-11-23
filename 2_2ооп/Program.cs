@@ -11,14 +11,14 @@ namespace lab5_1_2
     {
         static void Main()
         {
-            MyTime myTime = new MyTime(23, 59, 59);
+            MyTime myTime = new MyTime(0, 0, 0);
             Console.WriteLine(myTime);
             Console.WriteLine(MyTime.TimeSinceMidnight(myTime));
             Console.WriteLine(MyTime.TimeSinceMidnight(56749));
             Console.WriteLine(MyTime.AddOneSecond(myTime));
             Console.WriteLine(MyTime.AddOneMinute(myTime));
             Console.WriteLine(MyTime.AddOneHour(myTime));
-            Console.WriteLine(MyTime.AddSeconds(myTime, -12));
+            Console.WriteLine(MyTime.AddSeconds(myTime, 12));
             Console.WriteLine();
         }
         
